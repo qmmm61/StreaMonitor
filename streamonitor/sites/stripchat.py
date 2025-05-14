@@ -18,8 +18,11 @@ class StripChat(Bot):
 
     def getPlaylistVariants(self, url):
         def formatUrl(master, auto):
+            # edge-hls.doppiocdn.live
+            # edge-hls.doppiocdn.com
+            # edge-hls.doppiocdn.org
             return "https://edge-hls.{host}/hls/{id}{vr}/{master}/{id}{vr}{auto}.m3u8".format(
-            host='doppiocdn.com',
+            host='doppiocdn.org',
             id=self.lastInfo["cam"]["streamName"],
             master='master' if master else '',
             auto='_auto' if auto else '',
